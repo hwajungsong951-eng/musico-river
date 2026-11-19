@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>River</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="titlebar" data-tauri-drag-region>
+    <span class="app-title" data-tauri-drag-region>RIVER</span>
+    <div class="win-actions">
+      <button id="btn-min" title="최소화">—</button>
+      <button id="btn-close" title="닫기">×</button>
+    </div>
+  </header>
+
+  <!-- 검색 모드 -->
+  <main id="search-mode" class="screen">
+    <div class="search-row">
+      <input id="search-input" type="text" placeholder="곡 검색..." autocomplete="off" />
+      <button id="btn-search">검색</button>
+    </div>
+    <ul id="search-results"></ul>
+  </main>
+
+  <!-- 강물 모드 -->
+  <main id="river-mode" class="screen hidden">
+    <section class="now-playing">
+      <h1 id="track-title"></h1>
+      <p id="track-artist"></p>
+    </section>
+
+    <section id="controls">
+      <button id="btn-play-pause" title="재생/일시정지">⏸</button>
+      <button id="btn-stop-now" title="정지">■</button>
+      <input id="volume-slider" type="range" min="0" max="1" step="0.02" value="1" title="볼륨" />
+    </section>
+
+    <footer id="decision-bar" class="hidden">
+      <button id="btn-continue">계속 흘려</button>
+      <button id="btn-stop">멈춰</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
